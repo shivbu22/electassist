@@ -15,3 +15,5 @@ desktop.ini
 # Temp
 *.tmp
 stitch_ui.html
+
+.vercel
