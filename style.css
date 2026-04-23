@@ -32,15 +32,14 @@ html { scroll-behavior: smooth; }
 .mesh-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.35;
+  opacity: 0.5;
   will-change: transform;
   animation: floatOrb 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.orb-1 { width: 40vw; height: 40vw; top: -10vw; left: -10vw; background: rgba(59, 130, 246, 0.3); }
-.orb-2 { width: 35vw; height: 35vw; bottom: -5vw; right: -10vw; background: rgba(16, 185, 129, 0.2); animation-delay: -5s; }
-.orb-3 { width: 30vw; height: 30vw; top: 40%; left: 40%; background: rgba(245, 158, 11, 0.15); animation-delay: -10s; }
+.orb-1 { width: 40vw; height: 40vw; top: -10vw; left: -10vw; background: radial-gradient(circle, rgba(59, 130, 246, 0.4) 0%, rgba(59, 130, 246, 0) 70%); }
+.orb-2 { width: 35vw; height: 35vw; bottom: -5vw; right: -10vw; background: radial-gradient(circle, rgba(16, 185, 129, 0.3) 0%, rgba(16, 185, 129, 0) 70%); animation-delay: -5s; }
+.orb-3 { width: 30vw; height: 30vw; top: 40%; left: 40%; background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(245, 158, 11, 0) 70%); animation-delay: -10s; }
 
 @keyframes floatOrb {
   0%   { transform: translate(0, 0) scale(1); }
@@ -50,8 +49,8 @@ html { scroll-behavior: smooth; }
 /* ── Glassmorphism Utility ── */
 .glass {
   background: rgba(18, 18, 18, 0.6);
-  backdrop-filter: blur(20px) saturate(1.4);
-  -webkit-backdrop-filter: blur(20px) saturate(1.4);
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
