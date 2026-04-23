@@ -14,6 +14,8 @@ const state = {
   isProcessing: false,
   currentWizardStep: 1,
   totalWizardSteps: 5,
+  isTimelineRendered: false,
+  isFAQRendered: false,
 };
 
 // DOM Elements
@@ -179,8 +181,6 @@ function init() {
     }
   });
   
-  renderTimeline();
-  renderFAQ();
   renderWizard();
   initAnimations();
   bootSystem();
@@ -234,6 +234,15 @@ function switchView(viewId) {
   els.navItems.forEach(btn => btn.classList.toggle('active', btn.dataset.view === viewId));
   els.mobileNavBtns.forEach(btn => btn.classList.toggle('active', btn.dataset.view === viewId));
   els.viewContents.forEach(content => content.classList.toggle('active', content.id === viewId));
+  
+  if (viewId === 'timeline' && !state.isTimelineRendered) {
+    renderTimeline();
+    state.isTimelineRendered = true;
+  }
+  if (viewId === 'faq' && !state.isFAQRendered) {
+    renderFAQ();
+    state.isFAQRendered = true;
+  }
   
   // Scroll main content area to top on view switch
   const main = document.querySelector('main');
