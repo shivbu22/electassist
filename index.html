@@ -36,7 +36,7 @@
     .nav-item{transition:all .3s ease;position:relative;background:none;border:none;cursor:pointer}
     .nav-item.active{color:#FAFAFA;text-shadow:0 0 10px rgba(59,130,246,.5)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
-  </style>
+  .view-content:not(.active) { display: none !important; } .view-content { opacity: 0; transition: opacity 0.3s; } .view-content.active { display: block !important; opacity: 1; }</style>
 
   <!-- Local CSS (fast, no network latency) -->
   <style>
