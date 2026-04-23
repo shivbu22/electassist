@@ -38,12 +38,11 @@
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}
   </style>
 
-  <!-- Deferred external CSS -->
-  <link rel="preload" as="style" href="./tailwind.css">
-  <link href="./tailwind.css" rel="stylesheet" media="print" onload="this.media='all'"/>
-  <noscript><link href="./tailwind.css" rel="stylesheet"/></noscript>
+  <!-- Local CSS (fast, no network latency) -->
+  <link href="./tailwind.css" rel="stylesheet"/>
+  <link href="./style.css" rel="stylesheet"/>
   
-  <!-- Fonts -->
+  <!-- Fonts (deferred — non-critical for first paint) -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/></noscript>
@@ -51,9 +50,6 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
   <noscript><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/></noscript>
-  
-  <link href="./style.css" rel="stylesheet" media="print" onload="this.media='all'"/>
-  <noscript><link href="./style.css" rel="stylesheet"/></noscript>
 </head>
 <body class="font-body overflow-x-hidden h-screen flex flex-col relative selection:bg-primary/30 selection:text-white">
 
