@@ -95,9 +95,19 @@ assert(samePoint === 0, 'Same point distance is 0');
 
 console.log('\n🔒 SECURITY TESTS');
 
-// Ensure no hardcoded keys in source
+// Ensure no hardcoded keys in source (ignore if from localStorage)
 if (typeof document !== 'undefined') {
-  assert(!document?.querySelector?.('script[src*="key=AI"]'), 'No hardcoded API keys in script tags');
+  const scripts = document.querySelectorAll('script[src*="key=AI"]');
+  const storedMapsKey = localStorage.getItem('electassist_maps_key');
+  let hardcodedFound = false;
+  
+  scripts.forEach(s => {
+    if (!storedMapsKey || !s.src.includes(`key=${storedMapsKey}`)) {
+      hardcodedFound = true;
+    }
+  });
+  
+  assert(!hardcodedFound, 'No hardcoded API keys in script tags');
 }
 
 // ─── Accessibility Tests ──────────────────────────────
